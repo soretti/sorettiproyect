@@ -1,0 +1,125 @@
+textura acrilico
+travesuras.25
+
+
+trahcssl password para vermicuenta ssl
+usuario: hart&co
+pin 1305
+mexjousA1305
+
+c0b5n78a
+
+root P9HHpgrM8%Wb6r
+
+cuenta cpanel h4rt&c0s4D3cv
+
+cuenta cpanel vermicuenta v3rm1cu3nt4h4rt 
+
+base de datos hart&cosaD3cv
+
+
+servidor hart 23.92.66.227
+
+216.18.211.2
+
+webmail 208.78.96.103 paginas web
+
+--------Twitter accesos--------
+Nombre Trahc
+correo: ob@paginasweb.mx
+pass: controlweb
+nombre trahcmx
+nameapp: trahcApp
+
+
+
+
+---- goodaday Amores y sabores---- 
+cliente: 69690554
+pass:AmoresyS321
+
+pin telefonico 2002
+
+
+
+
+-------------------------------Twitter app------------------------------------------------
+
+OAuth settings
+ 
+Your application's OAuth settings. Keep the "Consumer secret" a secret. This key should never be human-readable in your application.
+ 
+
+
+Access level
+
+ Read-only 
+
+About the application permission model
+ 
+
+
+Consumer key
+
+QCsbTsmygT1B56Xo2pQuGQ
+
+
+
+Consumer secret
+
+AsLbTWXGJV0Sg9Yk50UWJ7c3ipk8OFCuVemvpBsiLk
+
+
+
+Request token URL
+
+https://api.twitter.com/oauth/request_token
+
+
+
+Authorize URL
+
+https://api.twitter.com/oauth/authorize
+
+
+
+Access token URL
+
+https://api.twitter.com/oauth/access_token
+
+
+
+Callback URL
+
+None
+
+
+
+Sign in with Twitter
+
+No
+
+ 
+Your access token
+
+ Use the access token string as your "oauth_token" and the access token secret as your "oauth_token_secret" to sign requests with your own Twitter account. Do not share your oauth_token_secret with anyone. 
+
+
+
+Access token
+
+1880686429-yegepmgDqRK8BIo98JKSAg37udm2EvbFKnlaMcE
+
+
+
+Access token secret
+
+Rn7RPIYoq1CUXzzpLmUvouOf3MJPzIgg6Co4umHuhc
+
+
+
+Access level
+
+Read-only
+
+

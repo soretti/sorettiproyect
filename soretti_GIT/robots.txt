@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /modulo/
+Disallow: /modulo
+Disallow: /admin

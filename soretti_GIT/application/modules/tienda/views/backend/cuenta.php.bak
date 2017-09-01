@@ -1,0 +1,77 @@
+<form action="" method="post" id="myform">
+
+<div class="row">
+      <div class="col-md-12">
+
+        <?php if($this->session->flashdata('mensaje')) {?>
+        <div class="alert alert-success">
+          <?php echo $this->session->flashdata('mensaje'); ?>
+        </div>
+        <?php } ?>
+        <div class="btn-toolbar">
+          <?php if($this->acceso->valida('tienda','editar')) {?>
+          <button class="btn btn-success" type="submit" onclick="goto('<?php echo base_url('modulo/tienda/backend/cuenta/guardardescuento/'.$cuenta->id) ?>')">Guardar</button>
+          <?php } ?>
+          <a class="btn btn-default" href="<?php echo base_url('modulo/tienda/backend/cuenta/listar') ?>">Regresar</a>
+        </div>
+      </div>
+    </div>
+
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="tabs_catalogo">
+      <li class="active"><a href="#1" data-toggle="tab">Información básica</a></li>
+      <li><a href="#2" data-toggle="tab">Direcciones</a></li>
+      <li><a href="#4" data-toggle="tab">Newsletter</a></li>
+    </ul>
+    <div class="tab-content" style="padding:20px">
+    	<div class="tab-pane active" id="1">
+    		Nombre: <?php echo $cuenta->nombre . ' ' . $cuenta->apellidoPaterno. ' ' . $cuenta->apellidoMaterno ?><br>
+    		Email:  <a href="mailto:<?php echo $cuenta->email ?>"><?php echo $cuenta->email ?></a><br>
+    		Teléfono: <?php echo $cuenta->lada ?> <?php echo $cuenta->telefono ?><br>
+               Descuento:
+              <select class="form-control" name="descuento_id" id="descuento_id">
+                  <option value="0"></option>
+                  <?php foreach ($descuento as $key => $value) { ?>
+                        <option value="<?php echo $value->id; ?>" <?php if($cuenta->descuento_id==$value->id) echo "selected"; ?>><?php echo $value->titulo.' - '.$value->porcentaje.'%';  ?></option>
+                   <?php } ?>
+
+              </select>
+
+              <br>
+    	</div>
+    	<div class="tab-pane" id="2">
+    		<?php foreach ($cuenta->tiendadireccion as $key => $direccion): ?>
+    			<div class="col-md-4 col-sm-6">
+    				<p><strong><?php echo $direccion->alias ?></strong></p>
+    				<p>
+    					Nombre: <?php echo $direccion->nombre . ' ' . $direccion->apellidoPaterno. ' ' . $direccion->apellidoMaterno ?><br>
+    					Estado/Distrito: <?php echo $direccion->estado->titulo ?><br>
+    					Cd., mpio. o del.: <?php echo $direccion->municipio->titulo ?><br>
+    					Colonia: <?php echo $direccion->colonia->titulo ?><br>
+  						Calle: <?php echo $direccion->calle ?><br>
+  						No. exterior: <?php echo $direccion->numero_ext ?><br>
+  						No. interior: <?php echo $direccion->numero_int ?><br>
+  						Código Postal: <?php echo $direccion->codigo ?><br>
+  						Teléfono: <?php echo $direccion->lada ?> <?php echo $direccion->telefono ?><br>
+  						Celular: <?php echo $direccion->celular ?><br>
+    				</p>
+    			</div>
+    		<?php endforeach; ?>
+    	</div>
+    	<div class="tab-pane" id="4">
+            <p><?php echo $newsletter->email ?></p>
+            <p>
+    		     Nombre: <?php echo $newsletter->nombre ?> <?php echo $newsletter->apellidoPaterno ?> <?php echo $newsletter->apellidoMaterno ?><br>
+              Inscrito: <?php if($newsletter->unsuscribe): ?> NO <?php else: ?> SI <?php endif; ?><br>
+
+              Temas de interés:<br>
+              <?php foreach ($grupos as $key => $grupo) : ?>
+                <?php echo $grupo->nombre ?><br>
+              <?php endforeach ?>
+
+            </p>
+    	</div>
+    </div>
+</div>
+</form>
+

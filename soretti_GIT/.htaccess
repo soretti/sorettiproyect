@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|pub|old|html|user_guide|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+
+RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|Baiduspider) [NC]
+RewriteRule .* - [R=403,L]
+ 
+
+

@@ -1,0 +1,261 @@
+span.errores, span.error{
+    color:#E80000;
+    font-size: 11px;
+}
+.map-box{
+    width: 100%;
+    height: 250px;
+}
+
+.map-box-frame{
+     width: 100%;
+    height: 500px;
+}
+.contenido-html img {
+  max-width: 100% !important;
+  height: auto;
+}
+.contenido-html figure {
+  max-width: 100% !important;
+  height: auto;
+}
+.contenido-html img[style*="align:left"],
+.contenido-html img[style*="float:left"],
+.contenido-html img[style*="float: left"],
+.contenido-html figure.captionjs[style*="align:left"],
+.contenido-html figure.captionjs[style*="float:left"],
+.contenido-html figure.captionjs[style*="float: left"] {
+  margin: 0px 15px 0px 0px;
+  max-width: 100% !important;
+  height: auto;
+}
+.contenido-html img[style*="align:right"],
+.contenido-html img[style*="float:right"],
+.contenido-html img[style*="float: right"] .contenido-html figure.captionjs[style*="align:right"],
+.contenido-html figure.captionjs[style*="float:right"],
+.contenido-html figure.captionjs[style*="float: right"] {
+  margin: 0px 0px 0px 15px;
+}
+.contenido-html table td{
+  padding:5px;
+  border:1px solid #E1E1E1;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+
+}
+.dropdown-submenu > .dropdown-menu > .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #FFFFFF;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #FFFFFF;
+}
+
+.dropdown-menu .dropdown-submenu >a:after {
+    border-left-color: #8B8B8B;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+#pinterest_grid, #pinterest_grid_productos {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  clear:both;
+}
+#pinterest_grid .white-panel, #pinterest_grid_productos .white-panel {
+  position: absolute;
+}
+
+.combinaciones .label_atributos{
+  display: block;
+}
+ .combinaciones .tipo3{
+    cursor: pointer; 
+ }
+ .combinaciones input[type=radio].radio_3{
+  display: none;
+ }
+ .combinaciones input[type=radio]:checked + .tipo3{
+    border: 1px solid #B8B8B8
+ }
+ .combinaciones .tipo3 div{
+    width: 30px; height: 30px;
+    margin: 1px;
+ }
+ .combinaciones label.tipo2{
+  font-weight: normal;
+  cursor: pointer;
+ }
+
+ .transparent {
+  /* Required for IE 5, 6, 7 */
+  /* ...or something to trigger hasLayout, like zoom: 1; */
+    
+  /* Theoretically for IE 8 & 9 (more valid) */ 
+  /* ...but not required as filter works too */
+  /* should come BEFORE filter */
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  
+  /* This works in IE 8 & 9 too */
+  /* ... but also 5, 6, 7 */
+  filter: alpha(opacity=30);
+  
+  /* Older than Firefox 0.9 */
+  -moz-opacity:0.3;
+  
+  /* Safari 1.x (pre WebKit!) */
+  -khtml-opacity: 0.3;
+    
+  /* Modern!
+  /* Firefox 0.9+, Safari 2?, Chrome any?
+  /* Opera 9+, IE 9+ */
+  opacity: 0.3;
+}
+
+#pinterest_grid_productos{
+   h2
+   {
+   font-size:13px;
+   }
+
+   .item-panel img{
+     margin:0 auto;
+   }
+   div.box-imagen{
+    display: table;
+    min-height:221px;
+   }
+   div.imagen{
+    display: table-cell;
+    vertical-align: middle;
+    border:1px solid #E4E1E1;
+    padding: 5px;
+   }
+}
+
+ #pinterest_grid_categorias {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+
+  img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+  }
+
+      .white-panel {
+            position: absolute;
+            width: 30%!important;
+            @media (max-width:@ex-max){
+      width: 60%!important;
+      left: 20%!important;
+    }
+      }
+
+    .white-panel:hover {
+    margin-top: -10px;
+      -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+  }
+}
+
+
+
+
+#carrito{
+  position: relative;
+  .qty-ctrl a{
+    cursor:pointer;
+    text-decoration:none;
+  }
+  .thumb{
+    max-width: 90px;
+    padding-right: 5px;
+    float: left;
+  }
+  .table-bordered{
+    width: 100%;
+    margin-bottom: 15px;
+    th, td{
+      padding: 5px;
+    }
+  }
+  .loader{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+  }
+}
+
+table.total{
+  td{
+    width: auto;
+  }
+  width:100%;
+}
+.carrito-vacio{
+  padding:90px 0;
+  .fa-shopping-cart{
+    font-size:60px;
+    color:#C5C5C5;
+    float: left;
+    margin-right: 15px;
+  }
+}
+
+
+#live-chat iframe{
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   z-index: 50000;
+}

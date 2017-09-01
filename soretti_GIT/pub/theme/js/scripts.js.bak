@@ -1,0 +1,99 @@
+var owl;
+
+jQuery(document).ready(function($) {
+
+
+    $("#suscribirse").click(function(){
+        $("#mnewsletter").val('TRS6745-*1');
+        action = $("#formulario-newsletter").find("form").eq(0).attr("action");
+        $("#formulario-newsletter").load(action+" #formulario-newsletter-inner", $("#formulario-newsletter").find("form").eq(0).serializeArray());
+    });
+
+
+    owl=$('.owl-carousel').owlCarousel({
+            // loop:true,
+            margin:30,
+            nav:true,
+            responsiveClass:true,
+            responsive:{
+                0:{items:1},
+                600:{items:2},
+                1000:{items:3 }
+            }
+    });
+
+     $('#pinterest_grid').pinterest_grid({
+        no_columns: 3,
+        padding_x: 0,
+        padding_y: 0,
+        margin_bottom: 50,
+        single_column_breakpoint: 700
+    });
+
+     $('#pinterest_grid_categorias').pinterest_grid({
+        no_columns: 3,
+        padding_x: 0,
+        padding_y: 0,
+        margin_bottom: 50,
+        single_column_breakpoint: 700
+    });
+
+     $('#pinterest_grid_productos').pinterest_grid({
+        no_columns: 4,
+        padding_x: 0,
+        padding_y: 0,
+        margin_bottom: 50,
+        single_column_breakpoint: 700
+    });
+
+
+
+
+    $("a.fancy").fancybox();
+
+    $("#boton-search").click(function(){
+        document.location=base_url+'buscador/'+$('#input-search').val();
+    });
+
+    $('#input-search').keyup(function (event) {
+            if (event.keyCode == '13') {
+                document.location=base_url+'buscador/'+$('#input-search').val();
+            }
+            return false;
+    });
+
+    $(".menu-princial").find("li.active").eq(0).parents().addClass('active');
+
+    $("a[rel=producto]").fancybox({
+        'transitionIn'      : 'none',
+        'transitionOut'     : 'none',
+        'titlePosition'     : 'over',
+        'titleFormat'       : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' +  (currentIndex + 1) + ' / ' + currentArray.length + ' ' + title + '</span>';
+    }});
+
+    $(".fancybox-frame").fancybox({
+        'type': 'iframe',
+        width       : '60%',
+        height      : '60%'
+    });
+
+    $("#form-contacto input[name=boletin]").click(function(){
+        if( $(this).is( ":checked" ) ){
+            $("#form-contacto #temas-de-interes").removeClass('hide');
+        }else{
+             $("#form-contacto #temas-de-interes").addClass('hide');
+        }
+    });
+
+
+});
+
+function formato_precio(total) {
+    var neg = false;
+    if(total < 0) {
+        neg = true;
+        total = Math.abs(total);
+    }
+    return (neg ? "-$ " : '$ ') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+}

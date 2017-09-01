@@ -1,0 +1,58 @@
+<?php
+
+class Usuario extends DataMapper
+{
+
+	public $table='usuarios';
+	public $has_one = array('rol', 'descuento','cupon');
+	public $has_many = array('articulo','pagina','tiendadireccion','tienda/order');
+
+	function __construct($id=null){
+		parent::__construct($id);
+	}
+
+
+     public $validation = array(
+		'rol_id' => array('rules' => array('required')),
+		'nombre' => array('rules' => array('required','xss')),
+		'email' => array('rules' => array('required','trim','unique','valid_email')),
+		'password' => array('rules' => array('required', 'trim', 'min_length' => 3)),
+		'confirmar' => array('rules' => array('required','confirmarPassword' => array('password','confirmar') ) )
+		);
+
+	function _confirmarPassword($campo,$parametros)
+	{
+
+		if($this->{$parametros[0]}!=$this->{$parametros[1]}){
+			return FALSE;
+		}else{
+			return TRUE;
+		}
+	}
+
+ function _verificar_email($field)
+    {
+        // Don't encrypt an empty string
+        $this->get_by_email($this->{$field});
+
+        if ($this->result_count()>0)
+        {
+        	return TRUE;
+        }else{
+        	return FALSE;
+        }
+    }
+
+    function to_json() {
+    	$arr = array(
+    		'nombre'=>$this->nombre,
+    		'apellidoPaterno'=>$this->apellidoPaterno,
+    		'apellidoMaterno'=>$this->apellidoMaterno,
+    		'email'=>$this->email,
+    		'lada'=>$this->lada,
+    		'telefono'=>$this->telefono);
+
+    	return json_encode($arr);
+    }
+
+}

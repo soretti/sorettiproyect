@@ -1,0 +1,508 @@
+#menu-backend{
+	z-index: 2000;
+} 
+body.backend{
+ 	font-size: 13px;
+	background: url(../img/background.jpg) repeat;
+}
+
+#menu-principal{
+	top: 60px;
+}
+
+body.backend .table-responsive .table tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th{
+background-color: #E9FCE2;
+}
+body.backend .row{
+	margin-bottom: 15px;
+}
+body.backend .row.line{
+	margin-bottom: 0px;
+}
+body.backend .panel-heading{
+	font-weight: bold;
+}
+body.backend .pagination{
+	margin: 0;
+	float: right;
+}
+body.backend a.brand, body a.brand{
+	padding: 0 !important;
+	margin-left: 10px;
+	margin-right: 20px;
+	margin-top: 2px;
+}
+.porcentaje{
+	color: #FFFFFF;
+	font-weight: bold;
+	padding-right: 10px;
+	font-size: 14px;
+}
+/*---Main menu ----*/
+#menu-backend .navbar-brand{
+	display: none;
+	color: #FFF;
+	text-shadow:none;
+	font-size: 25px;
+}
+@media (max-width: 979px) {
+	#menu-backend .navbar-brand{
+		display: block;
+	}
+}
+#menu-backend .navbar-toggle{
+	background-color: #ddd;
+}
+.navbar-collapse{
+	border-color: #3F7883 !important;
+}
+
+#menu-backend .dropdown-menu li a:hover{
+	color: #D6D6D6;
+	background: #666666;
+}
+#menu-backend .dropdown-submenu {
+    position: relative;
+}
+
+#menu-backend .dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+#menu-backend .dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+#menu-backend .dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: bloque;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+#menu-backend .dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+#menu-backend .dropdown-submenu.pull-left {
+    float: none;
+}
+
+#menu-backend .dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+/*---Fin Main menu ----*/
+
+
+.disabled{
+	background-color: ##FFFFFF;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.zona-editable{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display:block;
+	position:absolute;
+	width: 100%;
+	height:100%;
+	z-index:8;
+	top:0px;
+	left:0px;
+	border: 3px dotted #00CC00;
+}
+.root > .editable > .zona-editable{
+	border: 5px solid #000000;
+}
+ .naranja .zona-editable{
+ 	border: 5px dotted #F89406;
+ }
+.editar .glyphicon{
+	font-size: 15px;
+	padding: 8px;
+}
+
+.editable{
+	position: absolute;
+ 	width: 100%;
+	height: 100%;
+	top:0px;
+	left:0px;
+	z-index: 8;
+}
+
+.editable:hover > .zona-editable
+{
+	display:block;
+}
+
+.zona-editable #user-options{ z-index:1000; display: none; }
+.columna{
+	/*display: table;*/
+	width: 100%;
+	min-height: 15px;
+}
+.tool-container{
+	z-index: 710 !important;
+}
+
+.contenedor-modulo.slider-prueba{
+	height: 406px;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	position: fixed;
+	top: 117px;
+	width: 100%;
+}
+
+.relative{
+	position: relative;
+}
+
+.tip-tools {
+    display: block;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: url("../img/raton-layout-25x25.gif") #FF15FA;
+    z-index: 399;
+    cursor: pointer;
+}
+.naranja > .tip-tools {
+	background: url("../img/raton-publicidad.gif") #E19325;
+}
+.root > .tip-tools, .root > .tip-tools {
+	 left: 0px;
+	 background: url("../img/raton-cols.gif") #FF15FA;
+}
+
+#banner .columna {
+	height: 406px;
+}
+
+
+body.login {
+    background-color: #000040;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+
+.form-signin .captcha{
+	margin-bottom: 12px;
+	text-align: center;
+}
+.form-signin .logo{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.form-signin {
+    background-color: #000040;
+    /*border: 1px solid #E5E5E5;*/
+    border-radius: 5px;
+    /*box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);*/
+    margin: 0 auto 20px;
+    max-width: 300px;
+    padding: 19px 29px 29px;
+}
+
+.form-signin input[type="text"], .form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+    background-color: #DDEBF9;
+}
+
+ul#trahctools_modulos
+{
+
+}
+
+ul#trahctools_modulos .enable
+{
+ position: absolute;
+ top: 2px;
+ right: 2px;
+}
+
+ul#trahctools_modulos li
+{
+	display: block;
+ 	margin: 5px 0;
+	padding: 5px 10px;
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	background: #fafafa;
+	background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+	background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+	background: linear-gradient(top, #fafafa 0%, #eee 100%);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-style: 13px;
+	position: relative;
+}
+
+ul#trahctools_modulos li .withimage{
+background: #fff;
+border: 1px solid #ccc;
+text-align: center;
+display: block;
+margin: 0 auto;
+padding: 4px;
+}
+
+#buscador .input-prepend
+{
+ margin-bottom: 0;
+}
+
+th.acciones,td.acciones
+{
+  white-space: nowrap;
+}
+.grid_acciones a {
+	font-size: 12px;
+	margin-right: 10px;
+}
+tr.seleccionados{
+	background: #FFD9D9;
+}
+
+tr.seleccionados .btn, tr.seleccionados .fila_articulo{
+	display: none;
+}
+
+#contenedor_articulos .add-on-titulo-articulo,
+#contenedor_subordinadas .add-on-titulo-articulo{
+	background: #FFFFFF;
+	text-align: left;
+	font-size: 12px;
+}
+table#grid th{
+	white-space: nowrap;
+}
+table#grid td{
+	font-size: 12px;
+}
+.formzone{
+	position: relative;
+	margin: 15px 0;
+	padding: 39px 19px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding-bottom: 19px;
+}
+.formzone .formlabel {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	color: #9da0a4;
+	-webkit-border-radius: 4px 0 4px 0;
+	-moz-border-radius: 4px 0 4px 0;
+	border-radius: 4px 0 4px 0;
+}
+.inline-block{
+	display: inline-block;
+}
+.magic-elems{
+	/*padding: 9.5px 9.5px 0px 9.5px;*/
+	margin-bottom: 10px;
+	background-color: #f5f5f5;
+	/*border: 1px solid #ccc;*/
+	/*border: 1px solid rgba(0, 0, 0, 0.15);*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	max-height: 185px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.magic-elems .input-prepend {
+	margin: 8px;
+}
+.error {
+	margin-bottom: 10px;
+	color: #fff;
+}
+.btn-toolbar .btn{
+	margin-right: 10px;
+}
+
+table.grid th{
+	background-color: #1b1b1b;
+	background-image: -moz-linear-gradient(top, #222222, #111111);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+	background-image: -webkit-linear-gradient(top, #222222, #111111);
+	background-image: -o-linear-gradient(top, #222222, #111111);
+	background-image: linear-gradient(to bottom, #FFFFFF, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: #ddd;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+	color: #464646;
+	font-size: 12px;
+}
+table.grid td{
+	padding: 2px 0 2px 4px;
+	vertical-align: middle;
+}
+table.grid .titulo_campos{
+	white-space: nowrap;
+}
+
+#pad-lock {
+	background: url("../img/padlock.png") no-repeat 50% 0%;
+	width: 30px;
+	height: 29px!important;
+	position: relative;
+	left: 5px;
+	float: right;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+
+body#front #menu-backend,body.backend #menu-backend{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 600;
+}
+#menu-backend .container {
+width: auto;
+
+}
+#menu-backend .nav>li>a {
+
+	padding: 10px 8px 10px;
+
+}
+ #columnas-html5-4 {
+        -moz-column-count: 4;
+        -moz-column-gap: 15px;
+        -webkit-column-count: 4;
+        -webkit-column-gap: 15px;
+        column-count: 4;
+        column-gap: 15px;
+        column-rule-style: solid;
+        -moz-column-rule-style: solid;
+        -webkit-column-rule-style: solid;
+        column-rule-width: 1px;
+        -moz-column-rule-width: 1px;
+        -webkit-column-rule-width: 1px;
+        column-rule-color: #ddd;
+        -moz-column-rule-color: #ddd;
+        -webkit-column-rule-color: #ddd;
+
+ }
+.bs-callout {
+padding: 20px;
+margin: 20px 0;
+border: 1px solid #eee;
+border-left-width: 5px;
+border-radius: 3px;
+}
+.bs-callout-warning {
+border-left-color: #f0ad4e;
+}
+.bs-callout-danger {
+border-left-color: #d9534f;
+}
+.bs-callout-info {
+border-left-color: #5bc0de;
+}
+
+img.thumb{
+	width: 50px;
+}
+.scroll-categorias{
+	height: 250px;
+	overflow: auto;
+}
+
+.progress-bar[aria-valuenow="0"]{
+	color: #FFFFFF !important;
+}
+
+
+.transparent {
+  /* Required for IE 5, 6, 7 */
+  /* ...or something to trigger hasLayout, like zoom: 1; */
+
+  /* Theoretically for IE 8 & 9 (more valid) */
+  /* ...but not required as filter works too */
+  /* should come BEFORE filter */
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+  /* This works in IE 8 & 9 too */
+  /* ... but also 5, 6, 7 */
+  filter: alpha(opacity=50);
+
+  /* Older than Firefox 0.9 */
+  -moz-opacity:0.50;
+
+  /* Safari 1.x (pre WebKit!) */
+  -khtml-opacity: 0.50;
+
+  /* Modern!
+  /* Firefox 0.9+, Safari 2?, Chrome any?
+  /* Opera 9+, IE 9+ */
+  opacity: 0.50;
+}
+
+.txt-direccion{
+	line-height: 18px;
+}
+.importe.total{
+	font-size: 18px;
+}
+.label-categorias{
+	font-weight: normal;
+	cursor: pointer;
+}
+.label-categorias.checked{
+	font-weight: bold;
+}
+#contenedor_galeria .form-control.titulo{
+	font-size: 12px;
+}

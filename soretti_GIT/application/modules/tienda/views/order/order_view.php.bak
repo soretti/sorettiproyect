@@ -1,0 +1,141 @@
+<script>
+<?php if($this->uri->segment(3)=='printm') {?>
+jQuery(document).ready(function($) {
+window.print();
+$("#order-lateral").hide();
+});
+<?php } ?>
+</script>
+<div class="row">
+	<div class="col-md-12">
+		<?php if($this->session->flashdata('mensaje')) {?>
+		<div class="alert alert-success">
+			<?php echo $this->session->flashdata('mensaje'); ?>
+		</div>
+		<?php } ?>
+		<h1>MI CUENTA</h1>
+		<div class="row">
+			<div class="col-md-3" id="order-lateral">
+				<?php $this->load->view("tienda/cuenta/menu"); ?>
+			</div>
+			<div class="col-md-9">
+				<div class="encabezado"><?php echo $titulo; ?></div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="" ><label for="">Fecha:</label>  <?php  echo $this->dateutils->datees(strtotime($order->fecha_creacion),'c','c');  ?></div>
+						<div class="" ><label for="">Número de orden:</label>  <?php echo $order->id ?></div>
+						<div class=" fila-top" ><label for="">Status:</label>   <?php echo $status_tienda[$order->estatus]; ?> </div>
+					</div>
+					<div class="col-md-6 text-right">
+						<a href="<?php echo base_url("tienda/order/printm/".$order->id) ?>" target="_blank"><span style="font-size:50px;" class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div><strong>DIRECCIÓN DE ENTREGA</strong></div>
+						<p>
+							<div class="txt-direccion" >Nombre: <?php echo $envio->nombre ?> <?php echo $envio->apellidoPaterno ?> <?php echo $envio->apellidoMaterno ?></div>
+							<div class="txt-direccion" >Calle: <?php echo $envio->calle ?></div>
+							<div class="txt-direccion" >Número exterior: <?php echo $envio->numero_ext ?></div>
+							<div class="txt-direccion" >Número interior: <?php echo $envio->numero_int ?></div>
+							<div class="txt-direccion" >Colonia: <?php echo $envio->colonia ?></div>
+							<div class="txt-direccion" >CP: <?php echo $envio->codigo ?></div>
+							<div class="txt-direccion" >Municipio: <?php echo $envio->municipio ?></div>
+							<div class="txt-direccion" >Estado: <?php echo $envio->estado ?></div>
+							<div class="txt-direccion" >Teléfono: <?php echo $envio->telefono ?></div>
+							<div class="txt-direccion" >Celular: <?php echo $envio->celular ?></div>
+						</p>
+					</div>
+					<div class="col-md-6">
+						<div><strong>DATOS DE FACTURACIÓN</strong></div>
+						<?php if($factura->codigo): ?>
+						<div class="txt-direccion" >Calle: <?php echo $factura->calle ?></div>
+						<div class="txt-direccion" >Número exterior: <?php echo $factura->numero_ext ?></div>
+						<div class="txt-direccion" >Número interior: <?php echo $factura->numero_int ?></div>
+						<div class="txt-direccion" >Colonia: <?php echo $factura->colonia ?></div>
+						<div class="txt-direccion" >CP: <?php echo $factura->codigo ?></div>
+						<div class="txt-direccion" >Municipio: <?php echo $factura->municipio ?></div>
+						<div class="txt-direccion" >Estado: <?php echo $factura->estado ?></div>
+						<?php else: ?>
+						<div>N/A</div>
+						<?php endif; ?>
+					</div>
+				</div>
+				
+				
+				<div style="margin-bottom:30px" class="table-responsive">
+					<table class="carrito" id="tbl_carrito" >
+						<tr>
+							<th>sku</th>
+							<th>Producto</th>
+							<th>Cantidad</th>
+							<th>Precio</th>
+							<th>Subtotal</th>
+						</tr>
+						<?php foreach ($this->order->item as $key => $item): ?>
+						<tr>
+							<td><?php echo $item->SKU ?></td>
+							<td>
+								<?php if(isset($item->imagen)){ ?>
+								<img src="<?php echo base_url('pub/uploads/thumbs/'.name_image($item->imagen,'catalogo','cat_imagen',100,100)); ?>" alt="" class="thumb pull-left">
+								<?php } ?>
+								<?php echo $item->titulo ?>
+								<?php if($item->options) {?>
+								<div>
+									<?php foreach (json_decode($item->options,true) as $i => $value): ?>
+									<p> <small><?php echo $i.':'.$value ?></small> </p>
+									<?php endforeach; ?>
+								</div>
+								<?php } ?>
+							</td>
+							<td><?php echo $item->cantidad ?></td>
+							<td><?php echo formato_precio($item->precio) ?></td>
+							<td class="subtotal"><?php echo formato_precio($item->precio * $item->cantidad) ?></td>
+						</tr>
+						<?php endforeach; ?>
+					</table>
+				</div>
+				<div class="row fila-top">
+					<div class="col-lg-4">
+						&nbsp;
+					</div>
+					<div class="col-lg-8">
+						<div class="cuadro wrapper">
+							<table class="pull-right total-compra">
+								<tr>
+									<td class="text-left">Subtotal</td>
+									<td class="text-right importe"><?php echo formato_precio($pago->subtotal) ?></td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										<div>Flete</div>
+										<?php
+										$metodos_entrega=$this->config->item('metodos_entrega','proyecto');
+											if($pago->forma_entrega==3){
+											$this->load->view('order/entrega',array('envio'=>$envio));
+											}else{
+															echo $metodos_entrega[$pago->forma_entrega];
+											}
+										?>
+									</td>
+									<td class="text-right importe">
+										<?php echo formato_precio($pago->flete);   ?>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left total">TOTAL</td>
+									<td class="text-right "><span class="importe total"><?php echo formato_precio( $pago->total ); ?></span> <div class="small"> iva incluido</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div>
+					<?php $this->load->view('order/metodo_de_pago'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
